@@ -14,14 +14,15 @@ const name = formData.get("name")?.toString()
 const description = formData.get("description")?.toString()
 const imageUrl = formData.get("imageUrl")?.toString()
 const price = Number(formData.get("price") || 0)
+throw Error("Bazinga!")
 
-if (!name || !description || !imageUrl || !price) {
-  throw new Error("Please fill out all fields")
-}
+// if (!name || !description || !imageUrl || !price) {
+//   throw new Error("Please fill out all fields")
+// }
 
-await prisma.product.create({
-  data: {name, description, imageUrl, price},
-})
+// await prisma.product.create({
+//   data: {name, description, imageUrl, price},
+// })
 
 redirect("/")
 }
